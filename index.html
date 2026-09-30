@@ -1,1 +1,144 @@
-Halo
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Masih Percobaan</title>
+
+    <style>
+
+        /* =========================
+           PENGATURAN DASAR
+        ========================= */
+
+        body {
+            margin: 0;
+            font-family: "Times New Roman", serif;
+            background-color: white;
+        }
+
+        .container {
+            width: 670px;
+            margin: 20px auto;
+            border: 1px solid #999;
+        }
+
+        nav {
+            background-color: #eeeeee;
+            padding: 10px;
+        }
+
+        nav a {
+            margin-right: 15px;
+            color: blue;
+            cursor: pointer;
+        }
+
+
+        section {
+            display: none;
+            padding: 20px;
+            min-height: 250px;
+        }
+
+        /* Section yang aktif ditampilkan */
+
+        section.aktif {
+            display: block;
+        }
+
+
+        /* =========================
+           JUDUL
+        ========================= */
+
+        h1 {
+            color: teal;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+
+        <!-- =========================
+             MENU
+        ========================= -->
+
+        <nav>
+
+            <a href="#" onclick="tampilkan('tentang-saya')">
+                Tentang Saya
+            </a>
+
+            <a href="#" onclick="tampilkan('hobi-saya')">
+                Hobi Saya
+            </a>
+
+        </nav>
+
+        <section id="tentang-saya" class="aktif">
+
+            <h1>Tentang Saya</h1>
+
+            <p>
+                Nama saya Andro.
+            </p>
+
+            <p>
+                Saya sedang belajar membuat website menggunakan HTML dan CSS.
+            </p>
+
+        </section>
+
+        <section id="hobi-saya">
+
+            <h1>Hobi Saya</h1>
+
+            <p>
+                Hobi saya adalah bermain game dan mendengarkan musik.
+            </p>
+
+            <p>
+                Saya juga suka belajar tentang komputer.
+            </p>
+
+        </section>
+
+
+    </div>
+
+
+    
+
+    <script>
+
+        function tampilkan(id) {
+
+            // Ambil semua section
+            let semuaSection = document.querySelectorAll("section");
+
+            // Sembunyikan semua section
+            semuaSection.forEach(function(section) {
+                section.classList.remove("aktif");
+            });
+
+            // Tampilkan section yang dipilih
+            document.getElementById(id).classList.add("aktif");
+        }
+
+    </script>
+
+
+</body>
+
+</html>
