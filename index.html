@@ -4,7 +4,6 @@
 <head>
 
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Andromeda</title>
@@ -12,7 +11,7 @@
     <style>
 
         /* =========================
-           PENGATURAN DASAR
+           BODY
         ========================= */
 
         body {
@@ -20,6 +19,11 @@
             font-family: "Times New Roman", serif;
             background-color: white;
         }
+
+
+        /* =========================
+           CONTAINER
+        ========================= */
 
         .container {
             width: 670px;
@@ -29,18 +33,43 @@
 
 
         /* =========================
-           MENU NAVIGASI
+           HEADER
+        ========================= */
+
+        header {
+            width: 100%;
+            background-color: purple;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           NAVIGASI
         ========================= */
 
         nav {
-            background-color: #eeeeee;
+            background-color: #ffa6a6;
             padding: 10px;
+            border-bottom: 1px solid #999;
         }
 
         nav a {
             margin-right: 15px;
             color: blue;
             cursor: pointer;
+            text-decoration: underline;
         }
 
 
@@ -54,7 +83,7 @@
             min-height: 250px;
         }
 
-        /* Section yang aktif ditampilkan */
+        /* Section yang memiliki class aktif akan ditampilkan */
 
         section.aktif {
             display: block;
@@ -62,11 +91,56 @@
 
 
         /* =========================
-           JUDUL
+           TENTANG SAYA
         ========================= */
 
-        h1 {
+        #tentang-saya {
+            background-color: #f2e360;
+        }
+
+        #tentang-saya h1 {
             color: teal;
+            font-size: 24px;
+        }
+
+
+        /* =========================
+           HOBI SAYA
+        ========================= */
+
+        #hobi-saya {
+            background-color: lightpink;
+        }
+
+        #hobi-saya h2 {
+            color: teal;
+            font-size: 24px;
+        }
+
+
+        /* =========================
+           KEHIDUPAN SAYA
+        ========================= */
+
+        #kehidupan-saya {
+            background-color: #00ff19;
+        }
+
+        #kehidupan-saya h1 {
+            color: teal;
+            font-size: 24px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background-color: lightgray;
+            padding: 10px;
+            text-align: center;
+            border-top: 1px solid #999;
         }
 
     </style>
@@ -77,6 +151,20 @@
 <body>
 
     <div class="container">
+
+
+        <!-- =========================
+             HEADER
+        ========================= -->
+
+        <header>
+
+            <h1>Website Andro</h1>
+
+            <p>Selamat datang di website saya</p>
+            <p>(MASIH DALAM PROSES)</p>
+
+        </header>
 
 
         <!-- =========================
@@ -93,11 +181,15 @@
                 Hobi Saya
             </a>
 
+            <a href="#" onclick="tampilkan('kehidupan-saya')">
+                Kehidupan Saya
+            </a>
+
         </nav>
 
 
         <!-- =========================
-             HALAMAN 1
+             SECTION 1
         ========================= -->
 
         <section id="tentang-saya" class="aktif">
@@ -116,12 +208,12 @@
 
 
         <!-- =========================
-             HALAMAN 2
+             SECTION 2
         ========================= -->
 
         <section id="hobi-saya">
 
-            <h1>Hobi Saya</h1>
+            <h2>Hobi Saya</h2>
 
             <p>
                 Hobi saya adalah bermain game dan mendengarkan musik.
@@ -132,6 +224,32 @@
             </p>
 
         </section>
+
+
+        <!-- =========================
+             SECTION 3
+        ========================= -->
+
+        <section id="kehidupan-saya">
+
+            <h1>Kehidupan Saya</h1>
+
+            <p>
+                Saya setiap hari bangun jam 5 pagi.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             FOOTER
+        ========================= -->
+
+        <footer>
+
+            © 2026 Andro
+
+        </footer>
 
 
     </div>
@@ -145,20 +263,20 @@
 
         function tampilkan(id) {
 
-            // Ambil semua section
+            /* Cari semua section */
             let semuaSection = document.querySelectorAll("section");
 
-            // Sembunyikan semua section
+            /* Sembunyikan semua section */
             semuaSection.forEach(function(section) {
                 section.classList.remove("aktif");
             });
 
-            // Tampilkan section yang dipilih
+            /* Tampilkan section yang dipilih */
             document.getElementById(id).classList.add("aktif");
+
         }
 
     </script>
-
 
 </body>
 
