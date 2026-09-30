@@ -6,16 +6,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Andromeda</title>
+    <title>Website Andro</title>
 
     <style>
 
         /* =========================
-           BODY
+           PENGATURAN DASAR
         ========================= */
 
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
         body {
             margin: 0;
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
             font-family: "Times New Roman", serif;
             background-color: white;
         }
@@ -26,32 +36,36 @@
         ========================= */
 
         .container {
-            width: 670px;
-            margin: 20px auto;
-            border: 1px solid #999;
+            width: 100%;
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
         }
 
 
         /* =========================
-           HEADER
+           HEADER UTAMA
         ========================= */
 
         header {
             width: 100%;
             background-color: purple;
             color: white;
+
             text-align: center;
-            padding: 40px 0;
+
+            padding: 40px 20px;
         }
 
         header h1 {
             margin: 0;
-            font-size: 32px;
+            font-size: 40px;
         }
 
         header p {
             margin: 10px 0 0;
-            font-size: 16px;
+            font-size: 18px;
         }
 
 
@@ -60,16 +74,19 @@
         ========================= */
 
         nav {
-            background-color: #ffa6a6;
-            padding: 10px;
-            border-bottom: 1px solid #999;
+            width: 100%;
+            background-color: #ffdc5f;
+
+            padding: 12px 20px;
         }
 
         nav a {
-            margin-right: 15px;
+            margin-right: 20px;
+
             color: blue;
-            cursor: pointer;
             text-decoration: underline;
+
+            cursor: pointer;
         }
 
 
@@ -79,14 +96,12 @@
 
         section {
             display: none;
-            padding: 20px;
-            min-height: 250px;
+            padding: 30px;
         }
-
-        /* Section yang memiliki class aktif akan ditampilkan */
 
         section.aktif {
             display: block;
+            flex: 1;
         }
 
 
@@ -95,12 +110,12 @@
         ========================= */
 
         #tentang-saya {
-            background-color: #f2e360;
+            background-color: lightblue;
         }
 
-        #tentang-saya h1 {
+        #tentang-saya h2 {
             color: teal;
-            font-size: 24px;
+            font-size: 30px;
         }
 
 
@@ -113,8 +128,55 @@
         }
 
         #hobi-saya h2 {
-            color: teal;
+            color: #187831;
+            font-size: 30px;
+        }
+
+
+        /* =========================
+           HEADER KECIL DI DALAM HOBI
+        ========================= */
+
+        .subheader {
+            background-color: #ffffff;
+            border: 2px solid #187831;
+
+            padding: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+            text-align: center;
+        }
+
+        .subheader h3 {
+            margin: 0;
+            color: #187831;
             font-size: 24px;
+        }
+
+        .subheader p {
+            margin: 8px 0 0;
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           BAGIAN HOBI
+        ========================= */
+
+        .hobi-item {
+            background-color: white;
+
+            padding: 15px;
+            margin-bottom: 15px;
+
+            border-left: 5px solid #187831;
+        }
+
+        .hobi-item h4 {
+            margin-top: 0;
+            color: #187831;
+            font-size: 22px;
         }
 
 
@@ -123,12 +185,12 @@
         ========================= */
 
         #kehidupan-saya {
-            background-color: #00ff19;
+            background-color: lightyellow;
         }
 
-        #kehidupan-saya h1 {
-            color: teal;
-            font-size: 24px;
+        #kehidupan-saya h2 {
+            color: darkred;
+            font-size: 30px;
         }
 
 
@@ -137,10 +199,12 @@
         ========================= */
 
         footer {
+            width: 100%;
             background-color: lightgray;
-            padding: 10px;
+
+            padding: 12px;
+
             text-align: center;
-            border-top: 1px solid #999;
         }
 
     </style>
@@ -154,7 +218,7 @@
 
 
         <!-- =========================
-             HEADER
+             HEADER UTAMA
         ========================= -->
 
         <header>
@@ -168,7 +232,7 @@
 
 
         <!-- =========================
-             MENU
+             NAVIGASI
         ========================= -->
 
         <nav>
@@ -189,12 +253,12 @@
 
 
         <!-- =========================
-             SECTION 1
+             SECTION TENTANG SAYA
         ========================= -->
 
         <section id="tentang-saya" class="aktif">
 
-            <h1>Tentang Saya</h1>
+            <h2>Tentang Saya</h2>
 
             <p>
                 Nama saya Andro.
@@ -208,31 +272,78 @@
 
 
         <!-- =========================
-             SECTION 2
+             SECTION HOBI SAYA
         ========================= -->
 
         <section id="hobi-saya">
 
             <h2>Hobi Saya</h2>
 
-            <p>
-                Hobi saya adalah bermain game dan mendengarkan musik.
-            </p>
+            <!-- HEADER KECIL -->
 
-            <p>
-                Saya juga suka belajar tentang komputer.
-            </p>
+            <div class="subheader">
+
+                <h3>Penjelasan Mengenai Hobi Saya</h3>
+
+                <p>
+                    Beberapa hal yang saya sukai untuk dipelajari.
+                </p>
+
+            </div>
+
+
+            <!-- HOBI 1 -->
+
+            <div class="hobi-item">
+
+                <h4>Sejarah</h4>
+
+                <p>
+                    Saya suka mempelajari sejarah berbagai negara,
+                    peristiwa masa lalu, dan perkembangan peradaban.
+                </p>
+
+            </div>
+
+
+            <!-- HOBI 2 -->
+
+            <div class="hobi-item">
+
+                <h4>Bahasa Jepang</h4>
+
+                <p>
+                    Saya tertarik mempelajari bahasa Jepang,
+                    termasuk kosakata, kanji, dan tata bahasanya.
+                </p>
+
+            </div>
+
+
+            <!-- HOBI 3 -->
+
+            <div class="hobi-item">
+
+                <h4>Geografi</h4>
+
+                <p>
+                    Saya tertarik mempelajari negara, wilayah,
+                    peta, kondisi geografis, dan hubungan manusia
+                    dengan lingkungan.
+                </p>
+
+            </div>
 
         </section>
 
 
         <!-- =========================
-             SECTION 3
+             SECTION KEHIDUPAN SAYA
         ========================= -->
 
         <section id="kehidupan-saya">
 
-            <h1>Kehidupan Saya</h1>
+            <h2>Kehidupan Saya</h2>
 
             <p>
                 Saya setiap hari bangun jam 5 pagi.
@@ -263,15 +374,14 @@
 
         function tampilkan(id) {
 
-            /* Cari semua section */
             let semuaSection = document.querySelectorAll("section");
 
-            /* Sembunyikan semua section */
             semuaSection.forEach(function(section) {
+
                 section.classList.remove("aktif");
+
             });
 
-            /* Tampilkan section yang dipilih */
             document.getElementById(id).classList.add("aktif");
 
         }
